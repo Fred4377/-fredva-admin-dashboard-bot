@@ -43,31 +43,23 @@
             height: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f0a1c;
+            background: #f1f5f9;
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(168, 85, 247, 0.3);
+            background: rgba(59, 130, 246, 0.3);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(168, 85, 247, 0.6);
+            background: rgba(59, 130, 246, 0.6);
         }
 
         /* Pulsing Glow Animation */
         @keyframes status-pulse {
-            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px rgba(34, 197, 94, 0.6); }
-            50% { opacity: 0.6; transform: scale(1.15); box-shadow: 0 0 15px rgba(34, 197, 94, 0.8); }
+            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px rgba(16, 185, 129, 0.6); }
+            50% { opacity: 0.6; transform: scale(1.15); box-shadow: 0 0 15px rgba(16, 185, 129, 0.8); }
         }
         .status-active-pulse {
             animation: status-pulse 2s infinite ease-in-out;
-        }
-
-        /* Custom glow backgrounds */
-        .velvet-glow {
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
-        }
-        .solar-glow {
-            box-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
         }
 
         /* Hide tabs default */
@@ -76,6 +68,133 @@
         }
         .tab-content.active {
             display: block;
+        }
+
+        /* =========================================
+           SLEEK FLAT SAAS LIGHT THEME OVERRIDES
+           ========================================= */
+        body {
+            background-color: #f1f5f9 !important;
+            color: #334155 !important;
+        }
+        
+        /* Sidebar dark background override */
+        aside, aside * {
+            background-color: #0f172a !important;
+            color: #94a3b8 !important;
+            border-color: rgba(255, 255, 255, 0.05) !important;
+        }
+        aside .text-white, aside font, aside h1, aside h1 span, aside p.text-white, aside strong {
+            color: #ffffff !important;
+        }
+        aside .nav-btn.bg-purple-500\/10 {
+            background-color: rgba(59, 130, 246, 0.15) !important;
+            border-color: #3b82f6 !important;
+            color: #ffffff !important;
+        }
+        aside .nav-btn.bg-purple-500\/10 i {
+            color: #3b82f6 !important;
+        }
+        aside .nav-btn:hover {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            color: #ffffff !important;
+        }
+        
+        /* Clean SaaS Flat Cards override */
+        .bg-velvet-900, .bg-velvet-950, #stats-leads, #stats-emails, #stats-revenue, .bg-velvet-950\/80 {
+            background-color: #ffffff !important;
+            color: #1e293b !important;
+            box-shadow: none !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 12px !important;
+        }
+        .velvet-glow, .solar-glow {
+            box-shadow: none !important;
+        }
+        
+        /* Stats titles & data headers */
+        h2, h3, h3.text-white, .text-purple-300, .text-solar {
+            color: #1e293b !important;
+        }
+        .text-gray-400, .text-gray-300 {
+            color: #64748b !important;
+        }
+        .border-purple-900\/30, .border-purple-950\/60, .divide-purple-950\/30, hr, .border-b, .border-t, .border-l {
+            border-color: #e2e8f0 !important;
+        }
+        
+        /* Primary Node Colors (Blue, Green, Amber) */
+        .text-emerald-400 {
+            color: #10b981 !important;
+        }
+        .bg-emerald-500\/10 {
+            background-color: rgba(16, 185, 129, 0.1) !important;
+            color: #10b981 !important;
+            border-color: rgba(16, 185, 129, 0.2) !important;
+        }
+        .text-solar, .text-amber-500 {
+            color: #f59e0b !important;
+        }
+        .bg-solar\/10, .bg-amber-500\/10 {
+            background-color: rgba(245, 158, 11, 0.1) !important;
+            color: #f59e0b !important;
+            border-color: rgba(245, 158, 11, 0.2) !important;
+        }
+        .text-purple-400 {
+            color: #3b82f6 !important; /* Slate Blue */
+        }
+        .bg-purple-500\/10 {
+            background-color: rgba(59, 130, 246, 0.1) !important;
+            color: #3b82f6 !important;
+            border-color: rgba(59, 130, 246, 0.2) !important;
+        }
+
+        /* Chart columns gradient override */
+        .bg-gradient-to-t.from-purple-900.to-purple-600, 
+        .bg-gradient-to-t.from-purple-900.to-purple-500, 
+        .bg-gradient-to-t.from-purple-900.to-solar {
+            background: linear-gradient(180deg, #3b82f6 0%, #93c5fd 100%) !important;
+        }
+        
+        /* Input & Controls style overrides */
+        select, input, textarea {
+            background-color: #ffffff !important;
+            border: 1px solid #cbd5e1 !important;
+            color: #1e293b !important;
+        }
+        select:focus, input:focus, textarea:focus {
+            border-color: #3b82f6 !important;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1) !important;
+        }
+        
+        /* Staggered Render Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        aside {
+            animation: fadeInUp 0.5s cubic-bezier(0.25, 1, 0.5, 1) both;
+            animation-delay: 0.1s;
+        }
+        main {
+            animation: fadeInUp 0.5s cubic-bezier(0.25, 1, 0.5, 1) both;
+            animation-delay: 0.2s;
+        }
+        #activity-feed, #scrape-results-box, #email-console, #mpesa-audit-logs {
+            animation: fadeInUp 0.5s cubic-bezier(0.25, 1, 0.5, 1) both;
+            animation-delay: 0.3s;
+        }
+        
+        /* Transitions */
+        aside, main, .tab-content, .nav-btn {
+            transition: width 0.3s ease, background-color 0.2s ease, transform 0.2s ease;
         }
     </style>
 </head>
